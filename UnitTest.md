@@ -18,16 +18,15 @@ Instrumentation和Activity有点类似，只不过Activity是需要一个界面�
 举个例子，利用InstrumentationTestCase 启动一个activity：在androidTest下新建一个java类，并且继承自InstrumentationTestCase编写一个public void的方法，但是必须要是方法名以test打头，比如testPublishSubject，并不需要@Test注解
 
 ```java
-
 	public class TestSubject extends InstrumentationTestCase {
   		private static final String LOG_TAG = "test";
  		public void testPublishSubject() {
     		launchActivity("demo.zts.com.demo",SecondActivity.class,null);
 		}
 	}
-
 ```
-
+***
+***
 ###备注
 ####1.Android Studio 的build variants 没有 test artifact问题
 解决方案是依次打开： File Menu -> Settings -> Build, Execution, Deployment -> Build Tools -> Gradle -> Experimental，将Enable all test artifacts (Unit Test and Instrumentation Test) in Android projects取消勾选，之后我们熟悉的Test Artifact就出现了，如下图
