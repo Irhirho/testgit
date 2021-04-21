@@ -27,3 +27,9 @@ Instrumentation和Activity有点类似，只不过Activity是需要一个界面�
 	}
 
 ```
+
+###备注
+####1.Android Studio 的build variants 没有 test artifact问题
+解决方案是依次打开： File Menu -> Settings -> Build, Execution, Deployment -> Build Tools -> Gradle -> Experimental，将Enable all test artifacts (Unit Test and Instrumentation Test) in Android projects取消勾选，之后我们熟悉的Test Artifact就出现了，如下图
+
+![test artifacr](http://img.blog.csdn.net/20160713154806459?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center)

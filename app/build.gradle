@@ -6,10 +6,14 @@ android {
 
     defaultConfig {
         applicationId "org.qtk.testeverything"
-        minSdkVersion 14
+        minSdkVersion 18
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"
+
+        //这句很重要
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
     }
     buildTypes {
         release {
@@ -21,6 +25,40 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:24.2.0'
+    compile 'com.android.support:design:24.2.0'
+
+    //junit4
+    testCompile 'junit:junit:4.12'
+
+    // Espresso 相关的引用
+    androidTestCompile 'com.android.support:support-annotations:24.2.0'
+    androidTestCompile 'com.android.support:appcompat-v7:24.2.0'
+    androidTestCompile 'com.android.support:design:24.2.0'
+//    androidTestCompile('com.android.support.test.espresso:espresso-core:2.1') {
+//        exclude group: 'javax.inject' //support 2.3
+//    }
+//    androidTestCompile 'com.android.support.test.espresso:espresso-intents:2.1'
+//    androidTestCompile 'com.android.support.test.espresso:espresso-contrib:2.1'
+//    androidTestCompile 'com.android.support.test:runner:0.2'
+
+    //测试相关网址 https://google.github.io/android-testing-support-library/downloads/index.html
+
+    // Android JUnit Runner
+    androidTestCompile 'com.android.support.test:runner:0.5'
+    // JUnit4 Rules
+    androidTestCompile 'com.android.support.test:rules:0.5'
+    // Espresso core
+    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.2'
+    // Espresso-contrib for DatePicker, RecyclerView, Drawer actions, Accessibility checks, CountingIdlingResource
+    androidTestCompile 'com.android.support.test.espresso:espresso-contrib:2.2.2'
+    // Espresso-web for WebView support
+    //androidTestCompile 'com.android.support.test.espresso:espresso-web:2.2.2'
+    // Espresso-idling-resource for synchronization with background jobs
+    androidTestCompile 'com.android.support.test.espresso:espresso-idling-resource:2.2.2'
+    // Espresso-intents for validation and stubbing of Intents
+    androidTestCompile 'com.android.support.test.espresso:espresso-intents:2.2.2'
+    // UiAutomator
+    androidTestCompile 'com.android.support.test.uiautomator:uiautomator-v18:2.1.2'
+
 }
